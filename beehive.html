@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Beehive Weight Demo</title>
+  
+
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+
+
+<!-- highcharts scripts -->
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+</head>
+
+<body>
+
+<div class="w3-container w3-indigo">
+<h1 id="beehive-demo">Beehive Weight Demo</h1>
+</div>
+
+<!-- graph s, highcharts js follows -->
+<div id="chart-A" class="chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div class="spacer"></div>
+<div id="chart-B" class="chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+<script>
+// Build Chart A
+Highcharts.chart('chart-A', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Beehive Data'
+    },
+    //subtitle: {
+    //    text: 'highcharts demo data'
+    //},
+    data: {
+         csvURL: 'http://uwawsn.zapto.org:8080/UWABeehiveData.csv',
+        //csvURL: 'https://demo-live-data.highcharts.com/time-data.csv', //demo site for test
+        enablePolling: true,
+        dataRefreshRate: 30 //seconds
+    }
+});
+
+// Build Chart B
+Highcharts.chart('chart-B', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Beehive Channel'
+    },
+    //subtitle: {
+    //    text: 'highcharts demo data'
+    //},
+    data: {
+        csvURL: 'http://uwawsn.zapto.org:8080/UWABeehiveChannel.csv',
+        //csvURL: 'https://demo-live-data.highcharts.com/time-data.csv', //demo site for test
+        enablePolling: true,
+        dataRefreshRate: 30
+    }
+});  
+</script>
+
+  
+<div class="w3-indigo w3-panel">
+<h5>  <img src="https://www.uwa.edu.au/assets/legacy/images/logo-full-hor-rev.png" 
+alt="UWA" style="width:15%" >
+Department of Computer Science and Software Engineering</h5>
+</div>
+
+</body>
+</html>
+
