@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=$
   <title>Beehive Weight Demo</title>
-  
+
 
   <style type="text/css">
       code{white-space: pre-wrap;}
@@ -17,7 +17,7 @@
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.$
   <![endif]-->
 
 
@@ -40,22 +40,23 @@
 <div class="spacer"></div>
 <div id="chart-B" class="chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-
 <script>
 // Build Chart A
 Highcharts.chart('chart-A', {
     chart: {
-        type: 'line'
+        type: 'line',
+        zoomType: 'x',
+        panning: true,
+        panKey: 'shift'
     },
     title: {
         text: 'Beehive Data'
     },
-    //subtitle: {
-    //    text: 'highcharts demo data'
-    //},
+    subtitle: {
+        text: 'Click and drag to zoom in.  Hold down shift key to pan.'
+    },
     data: {
          csvURL: 'http://uwawsn.zapto.org:8080/UWABeehiveData.csv',
-        //csvURL: 'https://demo-live-data.highcharts.com/time-data.csv', //demo site for test
         enablePolling: true,
         dataRefreshRate: 30 //seconds
     }
@@ -64,24 +65,24 @@ Highcharts.chart('chart-A', {
 // Build Chart B
 Highcharts.chart('chart-B', {
     chart: {
-        type: 'line'
+        type: 'line',
+        zoomType: 'x',
+        panning: true,
+        panKey: 'shift'
     },
     title: {
         text: 'Beehive Channel'
     },
-    //subtitle: {
-    //    text: 'highcharts demo data'
-    //},
+    subtitle: {
+        text: 'Click and drag to zoom in. Hold down shift key to pan.'
+    },
     data: {
-        csvURL: 'http://uwawsn.zapto.org:8080/UWABeehiveChannel.csv',
-        //csvURL: 'https://demo-live-data.highcharts.com/time-data.csv', //demo site for test
-        enablePolling: true,
-        dataRefreshRate: 30
+        csvURL: 'http://uwawsn.zapto.org:8080/UWABeehiveChannel.csv'
     }
-});  
+});
 </script>
 
-  
+
 <div class="w3-indigo w3-panel">
 <h5>  <img src="https://www.uwa.edu.au/assets/legacy/images/logo-full-hor-rev.png" 
 alt="UWA" style="width:15%" >
